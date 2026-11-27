@@ -1,0 +1,20 @@
+# Sobe o PostgreSQL já com o banco "showvete" e todas as tabelas/dados do schema.sql.
+#   docker compose up -d        (liga)
+#   docker compose down         (desliga, mantém os dados)
+#   docker compose down -v      (desliga e APAGA os dados; o schema.sql roda de novo na próxima subida)
+services:
+  db:
+    image: postgres:16
+    container_name: showvete-db
+    environment:
+      POSTGRES_DB: showvete
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - showvete-dados:/var/lib/postgresql/data
+
+volumes:
+  showvete-dados:

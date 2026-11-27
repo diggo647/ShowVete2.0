@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Show Vete | Cuidado de outro universo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">✦ Show <span>Vete</span> 🐾</div>
+    <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#precos">Preços</a>
+        <a href="#loja">Loja Pet</a>
+        <a href="#vacinas">Vacinação</a>
+        <a href="#agendamento">Agendar</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+    <div>
+        <span class="badge">✦ Segunda a sábado, 08h às 20h</span>
+        <h1>Cuidado de outro <span>universo.</span></h1>
+        <p>Saúde, carinho e atenção para os companheiros que iluminam nossos dias. Na Show Vete, cada pet é uma estrela!</p>
+        <a class="btn" href="#agendamento">Agendar atendimento ✦</a>
+    </div>
+    <div class="hero-art">🐶🐱🌙✨</div>
+</section>
+
+<section id="servicos">
+    <h2 class="section-title">Nossos Serviços</h2>
+    <p class="subtitle">Tudo para o bem-estar do seu companheiro.</p>
+    <div class="grid">
+        <div class="card"><div class="emoji">🩺</div><h3>Consultas</h3><p>Acompanhamento veterinário, avaliações e cuidados preventivos.</p></div>
+        <div class="card"><div class="emoji">🛁</div><h3>Banho e Tosa</h3><p>Higiene, cuidado e conforto para seu pet.</p></div>
+        <div class="card"><div class="emoji">🔬</div><h3>Exames</h3><p>Exames laboratoriais e avaliações de saúde.</p></div>
+        <div class="card"><div class="emoji">🥣</div><h3>Rações</h3><p>Alimentação para diferentes fases e necessidades.</p></div>
+    </div>
+</section>
+
+<section id="precos">
+    <h2 class="section-title">Tabela de Preços</h2>
+    <p class="subtitle">Confira alguns dos nossos serviços.</p>
+    <div class="panel">
+        <table>
+            <tr><th>Serviço</th><th>Valor</th></tr>
+            <tr><td>Consulta veterinária</td><td>R$ 90,00</td></tr>
+            <tr><td>Banho — porte pequeno</td><td>R$ 45,00</td></tr>
+            <tr><td>Banho — porte médio</td><td>R$ 60,00</td></tr>
+            <tr><td>Banho — porte grande</td><td>R$ 80,00</td></tr>
+            <tr><td>Tosa higiênica</td><td>R$ 35,00</td></tr>
+            <tr><td>Exames</td><td>A partir de R$ 50,00</td></tr>
+            <tr><td>Vacinação</td><td>A partir de R$ 75,00</td></tr>
+        </table>
+    </div>
+</section>
+
+<section id="loja">
+    <h2 class="section-title">Pet Shop Galáctico 🪐</h2>
+    <p class="subtitle">Rações, acessórios, brinquedos e tudo que seu pet precisa.</p>
+
+    <h3 class="shop-title">🥣 Rações</h3>
+    <div class="shop-grid" id="foodGrid"></div>
+
+    <h3 class="shop-title alt">🎀 Acessórios e Produtos</h3>
+    <div class="shop-grid" id="itemsGrid"></div>
+
+    <div class="panel">
+        <h3>🛒 Seu Carrinho <span class="count" id="cartCount">0</span></h3>
+        <div id="cartItems"></div>
+        <div class="cart-total" id="cartTotal"></div>
+    </div>
+
+    <div class="panel">
+        <h3>🚚 Como deseja receber?</h3>
+        <label class="radio"><input type="radio" name="deliveryOption" value="retirada" checked> Retirar na clínica — grátis</label>
+        <label class="radio"><input type="radio" name="deliveryOption" value="entrega"> Entrega em domicílio — taxa de R$ 8,00</label>
+        <input type="text" id="deliveryAddress" placeholder="Digite seu endereço completo" hidden>
+    </div>
+</section>
+
+<section id="vacinas">
+    <h2 class="section-title">Calendário de Vacinação ✦</h2>
+    <p class="subtitle">Confira os dias de vacinação e mantenha a carteirinha do seu pet atualizada.</p>
+
+    <div class="panel calendar">
+        <div class="calendar-header">
+            <button data-month="-1" aria-label="Mês anterior">❮</button>
+            <h3 id="calendarMonth"></h3>
+            <button data-month="1" aria-label="Próximo mês">❯</button>
+        </div>
+
+        <div class="calendar-grid" id="calendarGrid"></div>
+
+        <div class="legend">
+            <span><i></i> Dia selecionado</span>
+            <span><i class="vaccine"></i> Campanha de vacinação</span>
+        </div>
+
+        <div class="vaccine-info" id="vaccineInfo">
+            <h3>💉 Informações sobre vacinação</h3>
+            <p>Selecione um dia no calendário para consultar a programação.</p>
+        </div>
+    </div>
+</section>
+
+<section id="agendamento">
+    <h2 class="section-title">Agende seu Atendimento ✦</h2>
+    <p class="subtitle">Escolha o serviço, a data e os detalhes do atendimento.</p>
+
+    <div class="two-col">
+        <div class="panel">
+            <form id="bookingForm">
+                <label>Nome do tutor <input type="text" name="tutor" required></label>
+                <label>Nome do pet <input type="text" name="pet" required></label>
+                <label>Espécie
+                    <select name="species" required>
+                        <option value="">Selecione</option>
+                        <option>Cachorro</option><option>Gato</option><option>Ave</option>
+                        <option>Roedor</option><option>Réptil</option><option>Outro</option>
+                    </select>
+                </label>
+                <label>Serviço
+                    <select name="service" required>
+                        <option value="">Selecione</option>
+                        <option>Consulta</option><option>Banho e tosa</option>
+                        <option>Exame</option><option>Vacinação</option>
+                    </select>
+                </label>
+                <label>Data <input type="date" name="date" id="bookingDate" required></label>
+                <label>Horário
+                    <select name="time" id="timeSelect" required><option value="">Selecione</option></select>
+                </label>
+                <label>Forma de pagamento
+                    <select name="payment" required>
+                        <option value="">Selecione</option>
+                        <option>Pix</option><option>Dinheiro</option>
+                        <option>Cartão de débito</option><option>Cartão de crédito</option>
+                    </select>
+                </label>
+                <label>Observações <textarea name="notes" rows="3" placeholder="Conte algo importante sobre seu pet"></textarea></label>
+
+                <button class="btn" type="submit">Enviar solicitação</button>
+                <p class="note">Demonstração: o formulário não envia dados para a clínica.</p>
+                <div class="success" id="bookingSuccess" hidden></div>
+            </form>
+        </div>
+
+        <div class="panel">
+            <h3>Equipe e Escala Semanal</h3>
+            <p class="note">Trabalham 3 profissionais por dia: 2 no cuidado dos animais e 1 no caixa.</p>
+            <div class="staff-day" id="staffForDate">Selecione uma data para consultar a equipe.</div>
+            <h3>Equipe Show Vete</h3>
+            <div class="staff-grid" id="staffGrid"></div>
+        </div>
+    </div>
+</section>
+
+<section id="sobre">
+    <div class="two-col">
+        <div class="panel about">
+            <h2 class="section-title">Sobre a Show Vete</h2>
+            <p>Na Show Vete, acreditamos que os pets são parte da família e merecem carinho, atenção e cuidado. Nosso propósito é promover saúde, bem-estar e qualidade de vida, com atendimento acolhedor e responsável.</p>
+            <p>Queremos ser uma parceira de confiança dos tutores, porque cada patinha merece brilhar!</p>
+        </div>
+        <div class="hero-art about-art">🐾🌙🐕💫🐈</div>
+    </div>
+</section>
+
+<section id="contato">
+    <h2 class="section-title">Entre em Contato</h2>
+    <p class="subtitle">Estamos disponíveis para dúvidas e informações.</p>
+    <div class="grid three">
+        <div class="card"><div class="emoji">✉️</div><h3>E-mail</h3><p><a href="mailto:contato@showvete.com.br">contato@showvete.com.br</a></p></div>
+        <div class="card"><div class="emoji">💬</div><h3>WhatsApp</h3><p><a href="https://wa.me/5500000000000">Abrir conversa</a></p></div>
+        <div class="card"><div class="emoji">📍</div><h3>Localização</h3><p>Rua Projetada SN 209<br>Segunda a sábado, 08h às 20h</p></div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <strong>✦ Show Vete — Cuidado de outro universo 🐾</strong>
+    <p>Saúde e carinho para quem ilumina sua vida.</p>
+    <small>© 2026 Show Vete</small>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
